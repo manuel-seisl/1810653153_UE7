@@ -18,7 +18,7 @@ public class Main
                 break;
 
             } catch(NumberFormatException ex){
-                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Sie haben einen String eingegeben!", "Fehler", JOptionPane.ERROR_MESSAGE);
             }
 
         }
