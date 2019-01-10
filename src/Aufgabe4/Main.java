@@ -1,4 +1,4 @@
-package Aufgabe3;
+package Aufgabe4;
 
 import javax.swing.*;
 import java.util.regex.Matcher;
@@ -17,19 +17,19 @@ public class Main
 
             JOptionPane.showMessageDialog(null, "Ihre E-Mail Adresse lautet: " + email);
 
-        } catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Sie haben ein falsches E-Mail Format eingegeben!", "Fehler", JOptionPane.ERROR_MESSAGE);
+        } catch(WrongEmailFormatException ex){
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
         }
 
     }
 
-    public static void checkEmail(String email) throws Exception {
+    public static void checkEmail(String email) throws WrongEmailFormatException {
 
         Pattern pattern = Pattern.compile("[\\w|-]+@\\w[\\w|-]*\\.[a-z]{2,3}");
         Matcher m = pattern.matcher(email);
 
         if (!m.find()){
-            throw new Exception();
+            throw new WrongEmailFormatException();
         }
 
     }

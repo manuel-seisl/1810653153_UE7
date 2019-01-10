@@ -1,4 +1,4 @@
-package Aufgabe3;
+package Aufgabe4;
 
 public class WrongEmailFormatException extends Exception
 {
